@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Document</title>
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="container">
+<div class="row">
+<div class="col-12">
+<div class="bg-dark" id="toggle">TOGGLE</div>
+<div class="col-12" id="text">
+<p class="bg-dark text-light">You can also create accordions with custom markup. Add the data-children attribute and specify a set of sibling elements to toggle (e.g., .item). Then, use the same attributes and classes as shown above for connecting toggles to their associated content.</p>
+</div>
+</div>
+</div>
+</div>
+
+<div class="container mt-3">
+  <h2>Enable Via JavaScript</h2>
+  <div class="dropdown">
+    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+      Dropdown button
+    </button>
+    <div class="dropdown-menu">
+      <a class="dropdown-item" href="#">Link 1</a>
+      <a class="dropdown-item" href="#">Link 2</a>
+      <a class="dropdown-item" href="#">Link 3</a>
+    </div>
+  </div>
+  <p><strong>Note:</strong> The data-toggle="dropdown" attribute is required regardless of whether you call the dropdown() method.</p>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+<script src="js/bootstrap.js">
+</script>
+<script>
+$(document).ready(function(){
+	$("#toggle").click(function(){
+		$("#text").slideToggle("fast", function(){
+            alert("Element Toggled");
+        });
+	});
+});
+
+$(document).ready(function(){
+    $(".dropdown-toggle").dropdown();
+});
+</script>
+</body>
+</html>
